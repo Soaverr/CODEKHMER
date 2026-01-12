@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1bb566" />
+    <title>HTMLLERN</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      /* CSS Style */
+      @import url("https://fonts.googleapis.com/css2?family=Battambang&family=Moul&display=swap");
+
+      :root {
+        --primary-color: #1bb566;
+        --dark-bg: #212529;
+      }
+
+      html {
+        scroll-behavior: smooth; /* ធ្វើឱ្យពេលចុច Link វាអូសចុះរលូន */
+      }
+
+      body {
+        font-family: "Battambang", cursive;
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      .khmer-muol {
+        font-family: "Moul", serif;
+      }
+      .spa {
+        color: var(--primary-color);
+      }
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      /* Navbar Design */
+      .navbar {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .nav-link {
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      .nav-link:hover {
+        color: var(--primary-color) !important;
+      }
+
+      /* Card Design */
+      .box-card {
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+        cursor: pointer;
+      }
+      .box-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        border-color: var(--primary-color);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        padding: 100px 0;
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      }
+
+      /* Form Design */
+      .login-card {
+        border: none;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#page1"
+          >CODING <span class="spa">KHMER</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#page1">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-primary btn-sm text-white ms-lg-3 px-3"
+                href="#login"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="page1" class="hero-section text-center">
+      <div class="container" data-aos="zoom-in">
+        <h1 class="display-4 fw-bold mb-4">
+          រៀនបង្កើតគេហទំព័រ <span class="spa">Professional</span>
+        </h1>
+        <p class="lead mx-auto mb-5 text-secondary" style="max-width: 800px">
+          រៀនរចនាគេហទំព័រដោយប្រើ HTML, CSS, JavaScript និង Bootstrap ។
+          ទទួលបានចំណេះដឹងពិតប្រាកដ និងការអនុវត្តផ្ទាល់លើគម្រោងនីមួយៗ។
+        </p>
+        <a href="Bacsic.html" class="btn btn-primary btn-lg px-5 py-3 shadow-lg"
+          >Join Learning Now</a
+        >
+      </div>
+    </section>
+
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0 text-center" data-aos="fade-right">
+            <img
+              src="image/p2.png"
+              class="img-fluid rounded-4 shadow"
+              alt="History"
+              onerror="this.src='https://via.placeholder.com/500x350?text=Profile+Image'"
+            />
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <h2 class="fw-bold mb-3"><span class="spa">HIST</span>ORY</h2>
+            <h5 class="khmer-muol text-primary mb-3">
+              សួស្ដីខ្ញុំឈ្មោះ ស៊ សៅវឌី
+            </h5>
+            <p class="text-muted">
+              សព្វថ្ងៃរស់នៅផ្លូវ ២០០៤ សង្កាត់អូបាយក្អម ខណ្ឌសែនសុខ
+              រាជធានីភ្នំពេញ។
+            </p>
+            <p><strong>ជំនាញ៖</strong> HTML, CSS, JAVASCRIPT, BOOTSTRAP</p>
+            <button
+              class="btn btn-outline-info px-4"
+              onclick="alert('Welcome to my history!')"
+            >
+              Click ME
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+          <div class="col-md-6" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">Abo <span class="spa">ut Us</span></h2>
+            <p class="text-muted mb-4">
+              I provide modern technology training to help you become a
+              professional website creator in a short period of time.
+            </p>
+            <button class="btn btn-info text-white px-4">Learn More</button>
+          </div>
+          <div class="col-md-6 mb-4 text-center" data-aos="fade-left">
+            <img
+              src="image/p1.png"
+              class="img-fluid"
+              style="max-height: 300px"
+              alt="About"
+              onerror="this.src='https://via.placeholder.com/400x300?text=About+Us'"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-5">
+      <div class="container text-center">
+        <h1 class="fw-bold mb-5 khmer-muol">
+          មេរៀន <span class="spa">LERN</span>
+        </h1>
+        <div class="row g-4 justify-content-center">
+          <div class="col-6 col-lg-3" data-aos="flip-left">
+            <div class="box-card p-4 shadow-sm bg-white rounded-4">
+              <img src="image/html.png" class="mb-3" width="70" alt="HTML" />
+              <h5 class="fw-bold">HTML5</h5>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
+            <div class="box-card p-4 shadow-sm bg-white rounded-4">
+              <img src="image/css.png" class="mb-3" width="70" alt="CSS" />
+              <h5 class="fw-bold">CSS5</h5>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+            <div class="box-card p-4 shadow-sm bg-white rounded-4">
+              <img
+                src="image/btsp.png"
+                class="mb-3"
+                width="70"
+                alt="Bootstrap"
+              />
+              <h5 class="fw-bold">Bootstrap</h5>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
+            <div class="box-card p-4 shadow-sm bg-white rounded-4">
+              <img src="image/js.png" class="mb-3" width="70" alt="JS" />
+              <h5 class="fw-bold">JavaScript</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="login" class="py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-5">
+            <div class="card login-card shadow-lg p-4">
+              <h2 class="text-center mb-4 fw-bold khmer-muol">ចូលប្រើប្រាស់</h2>
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label class="form-label">Username</label>
+                  <input
+                    type="text"
+                    class="form-control py-2"
+                    id="username"
+                    placeholder="Enter username"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control py-2"
+                    id="password"
+                    placeholder="Enter password"
+                  />
+                </div>
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="checkShow"
+                    onclick="togglePass()"
+                  />
+                  <label class="form-check-label">Show Password</label>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary w-100 py-2 fw-bold"
+                >
+                  LOGIN
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+      <div class="container text-center">
+        <div class="d-flex justify-content-center gap-4 mb-4 fs-5">
+          <a
+            href="https://web.facebook.com/ex.prezz.2025?mibextid=wwXIfr&rdid=l8WgAJswgIIDiJeb&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1bXDyq7NpP%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#"
+            class="text-white"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://t.me/soaverdykh12345" class="text-white"
+            ><i class="fab fa-telegram"></i
+          ></a>
+        </div>
+        <p class="mb-0 text-secondary">
+          © 2025 Created by <strong>SOR SOAVERDY</strong>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // បើកដំណើរការ Animation
+      AOS.init({ duration: 1000, once: true });
+
+      // មុខងារបង្ហាញ Password
+      function togglePass() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+
+      // មុខងារ Login (ឧទាហរណ៍)
+      document.getElementById("loginForm").onsubmit = function (e) {
+        e.preventDefault();
+        alert("Login Successful!");
+      };
+    </script>
+  </body>
+</html>

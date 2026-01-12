@@ -1,0 +1,53 @@
+/* បន្ថែម Font ខ្មែរ */
+@import url("https://fonts.googleapis.com/css2?family=Battambang&family=Moul&display=swap");
+
+:root {
+  --primary-color: #1bb566;
+}
+
+body {
+  font-family: "Battambang", cursive;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.khmer-muol {
+  font-family: "Moul", serif;
+}
+
+.spa {
+  color: var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Design Card ឱ្យស្អាត */
+.box-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.box-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--primary-color);
+}
+
+/* រូបភាព Responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* កែសម្រួល Navbar */
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}

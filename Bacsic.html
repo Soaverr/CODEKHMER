@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Battambang&family=Moul&family=Fira+Code&display=swap");
+      :root {
+        --primary-color: #10b981;
+        --bg-dark: #0f172a;
+        --card-bg: #1e293b;
+        --text-gray: #94a3b8;
+      }
+      body {
+        font-family: "Battambang", cursive;
+        background-color: var(--bg-dark);
+        color: #f1f5f9;
+        scroll-behavior: smooth;
+      }
+      .khmer-muol {
+        font-family: "Moul", serif;
+        color: var(--primary-color);
+      }
+      .sidebar {
+        height: 85vh;
+        position: sticky;
+        top: 90px;
+        background: var(--card-bg);
+        padding: 15px;
+        border-radius: 15px;
+        overflow-y: auto;
+        border: 1px solid #334155;
+      }
+      .sidebar-links a {
+        text-decoration: none;
+        color: var(--text-gray);
+        display: block;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 13px;
+        margin-bottom: 2px;
+        transition: 0.2s;
+      }
+      .sidebar-links a:hover,
+      .sidebar-links a.active {
+        background: var(--primary-color);
+        color: white;
+      }
+      .lesson-card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        border: 1px solid #334155;
+      }
+      .split-view {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .code-window,
+      .preview-window {
+        flex: 1;
+        min-width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #334155;
+      }
+      .window-header {
+        background: #334155;
+        padding: 5px 15px;
+        font-size: 11px;
+        color: #cbd5e1;
+        display: flex;
+        justify-content: space-between;
+      }
+      .code-body {
+        background: #000;
+        padding: 15px;
+        font-family: "Fira Code", monospace;
+        font-size: 12.5px;
+        color: #d1d5db;
+        min-height: 120px;
+        line-height: 1.6;
+      }
+      .preview-body {
+        background: white;
+        padding: 15px;
+        color: #1e293b;
+        min-height: 120px;
+        border-radius: 0 0 10px 10px;
+      }
+      .t-tag {
+        color: #f87171;
+      }
+      .t-attr {
+        color: #fbbf24;
+      }
+      .t-val {
+        color: #34d399;
+      }
+      .box-demo {
+        width: 60px;
+        height: 60px;
+        background: var(--primary-color);
+        transition: 0.4s;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 10px;
+      }
+      .box-demo:hover {
+        background: #f59e0b;
+        transform: scale(1.1) rotate(10deg);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-dark bg-dark sticky-top border-bottom border-success py-2"
+    >
+      <div class="container">
+        <a class="navbar-brand khmer-muol fs-5" href="#">SOA HTML</a>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 d-none d-md-block">
+          <div class="sidebar sidebar-links">
+            <h6 class="text-white px-2 mb-3">បញ្ជីមេរៀន</h6>
+            <a href="#l1" class="active">១. HTML Structure</a>
+            <a href="#l2">២. Headings (h1-h6)</a>
+            <a href="#l3">៣. Text Formatting</a>
+            <a href="#l4">៤. Marquee Effect</a>
+            <a href="#l5">៥. Links (Anchor)</a>
+            <a href="#l6">៦. Images (រូបភាព)</a>
+            <a href="#l7">៧. Lists (UL/OL)</a>
+            <a href="#l8">៨. Tables (តារាង)</a>
+            <a href="#l9">៩. Forms & Inputs</a>
+            <a href="#l10">១០. Radio & Checkbox</a>
+            <a href="#l11">១១. Textarea & Dropdown</a>
+            <a href="#l12">១២. Semantic Elements</a>
+            <a href="#l13">១៣. CSS Inline Style</a>
+            <a href="#l14">១៤. CSS Colors</a>
+            <a href="#l15">១៥. CSS Background</a>
+            <a href="#l16">១៦. CSS Fonts</a>
+            <a href="#l17">១៧. Border & Radius</a>
+            <a href="#l18">១៨. Margin & Padding</a>
+            <a href="#l19">១៩. CSS Hover Effect</a>
+            <a href="#l20">២០. HTML Video/Audio</a>
+          </div>
+        </div>
+
+        <div class="col-md-9">
+          <section id="l1" class="lesson-card">
+            <h5 class="khmer-muol">១. HTML Structure</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="window-header">HTML</div>
+                <div class="code-body">
+                  <span class="t-tag">&lt;!DOCTYPE html&gt;</span><br />
+                  <span class="t-tag">&lt;html&gt;</span><br />
+                  &nbsp;&nbsp;<span class="t-tag">&lt;body&gt;</span>សួស្តី<span
+                    class="t-tag"
+                    >&lt;/body&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;/html&gt;</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">សួស្តី</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l2" class="lesson-card">
+            <h5 class="khmer-muol">២. Headings (h1-h6)</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;h1&gt;</span>ធំជាងគេ<span
+                    class="t-tag"
+                    >&lt;/h1&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;h3&gt;</span>មធ្យម<span class="t-tag"
+                    >&lt;/h3&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;h6&gt;</span>តូចជាងគេ<span
+                    class="t-tag"
+                    >&lt;/h6&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <h1>Heading 1</h1>
+                  <h3>Heading 3</h3>
+                  <h6>Heading 6</h6>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l3" class="lesson-card">
+            <h5 class="khmer-muol">៣. Text Formatting</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;b&gt;</span>ឌិត<span class="t-tag"
+                    >&lt;/b&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;i&gt;</span>ផ្អៀង<span class="t-tag"
+                    >&lt;/i&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;u&gt;</span>បន្ទាត់ក្រោម<span
+                    class="t-tag"
+                    >&lt;/u&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <b>អក្សរឌិត</b>, <i>អក្សរផ្អៀង</i>, <u>មានបន្ទាត់</u>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l4" class="lesson-card">
+            <h5 class="khmer-muol">៤. Marquee Effect</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;marquee&gt;</span>SOAVERDY<span
+                    class="t-tag"
+                    >&lt;/marquee&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <marquee>ស្វាគមន៍មកកាន់ការរៀន HTML...</marquee>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l5" class="lesson-card">
+            <h5 class="khmer-muol">៥. Links (Anchor)</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;a</span>
+                  <span class="t-attr">href=</span
+                  ><span class="t-val">"https://telegram"</span
+                  ><span class="t-tag">&gt;</span>link telegram<span
+                    class="t-tag"
+                    >&lt;/a&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <a href="https://t.me/soaverdykh12345"
+                    >Click links</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l6" class="lesson-card">
+            <h5 class="khmer-muol">៦. Images (រូបភាព)</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;img</span>
+                  <span class="t-attr">src=</span
+                  ><span class="t-val">"image.jpg"</span>
+                  <span class="t-attr">width=</span
+                  ><span class="t-val">"100"</span
+                  ><span class="t-tag">&gt;</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body text-center">
+                  <i class="fa-solid fa-image fa-3x text-muted"></i>
+                  <p>Image</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l7" class="lesson-card">
+            <h5 class="khmer-muol">៧. Lists (UL/OL)</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;ul&gt;</span><br />&nbsp;&nbsp;<span
+                    class="t-tag"
+                    >&lt;li&gt;</span
+                  >Item 1<span class="t-tag">&lt;/li&gt;</span><br />
+
+                  <span class="t-tag">&nbsp;&nbsp;&lt;li&gt;</span>Item 2<span class="t-tag"
+                    >&lt;/li&gt;</span
+                  ><br />
+
+                  <br /><span class="t-tag">&lt;/ul&gt;</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l8" class="lesson-card">
+            <h5 class="khmer-muol">៨. Tables (តារាង)</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag"
+                    >&lt;table <span class="t-attr">border=</span
+                    ><span class="t-val">"1"</span>&gt;</span
+                  ><br />&nbsp;&nbsp;<span class="t-tag"
+                    >&lt;tr&gt; <br />&nbsp;&nbsp;    &lt;th&gt;</span
+                  >Data<span class="t-tag">&lt;/th&gt;<br />&nbsp;&nbsp;&lt;/tr&gt;</span
+                  ><br /><span class="t-tag">&lt;/table&gt;</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <table border="1" style="width: 100%">
+                    <tr>
+                      <th>ឈ្មោះ</th>
+                      <th>អាយុ</th>
+                    </tr>
+                    <tr>
+                      <td>សុខា</td>
+                      <td>២០</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l9" class="lesson-card">
+            <h5 class="khmer-muol">៩. Forms & Inputs</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;input</span>
+                  <span class="t-attr">type=</span
+                  ><span class="t-val">"text"</span>
+                  <span class="t-attr">placeholder=</span
+                  ><span class="t-val">"Email"</span
+                  ><span class="t-tag">&gt;</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <input type="text" class="form-control" placeholder="Email" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l10" class="lesson-card">
+            <h5 class="khmer-muol">១០. Radio & Checkbox</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;input</span>
+                  <span class="t-attr">type=</span
+                  ><span class="t-val">"radio"</span
+                  ><span class="t-tag">&gt;</span> Name<br />
+                  <span class="t-tag">&lt;input</span>
+                  <span class="t-attr">type=</span
+                  ><span class="t-val">"checkbox"</span
+                  ><span class="t-tag">&gt;</span> checkbox
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <input type="radio" /> Name <br />
+                  <input type="checkbox" /> checkbox
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l11" class="lesson-card">
+            <h5 class="khmer-muol">១១. Textarea & Dropdown</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;select&gt;</span
+                  ><br />&nbsp;&nbsp;<span class="t-tag">&lt;option&gt;</span
+                  >TAKEO<span class="t-tag">&lt;/option&gt;</span><br /><span
+                    class="t-tag"<br />
+                    <span class="t-tag">&nbsp;&nbsp;&lt;option&gt;</spa
+                  >PP<span class="t-tag">&lt;/option&gt;</span><br />
+                    &lt;/select&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <select class="form-select">
+                    <option>TAKEO</option>
+                    <option>PP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l12" class="lesson-card">
+            <h5 class="khmer-muol">១២. Semantic Elements</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;header&gt;</span>Header<span
+                    class="t-tag"
+                    >&lt;/header&gt;</span
+                  ><br />
+                  <span class="t-tag">&lt;footer&gt;</span>Footer<span
+                    class="t-tag"
+                    >&lt;/footer&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body bg-light border text-center">
+                  Header / Main / Footer Content
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l13" class="lesson-card">
+            <h5 class="khmer-muol">១៣. CSS Inline Style</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  <span class="t-tag">&lt;p</span>
+                  <span class="t-attr">style=</span
+                  ><span class="t-val">"color: blue;"</span
+                  ><span class="t-tag">&gt;</span>Text<span class="t-tag"
+                    >&lt;/p&gt;</span
+                  >
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <p style="color: blue">color blue</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l14" class="lesson-card">
+            <h5 class="khmer-muol">១៤. CSS Colors</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  color: <span class="t-val">#10b981</span>;
+                  <span class="text-secondary">/* Hex */</span><br />
+                  color: <span class="t-val">rgb(255,0,0)</span>;
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <p style="color: #10b981">code colors</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l15" class="lesson-card">
+            <h5 class="khmer-muol">១៥. CSS Background</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  background-color: <span class="t-val">yellow</span>;
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body" style="background: yellow">
+                 background yellow
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l16" class="lesson-card">
+            <h5 class="khmer-muol">១៦. CSS Fonts</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  font-family: <span class="t-val">'Battambang'</span>;<br />
+                  font-size: <span class="t-val">20px</span>;
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <p style="font-size: 20px">font 20</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l17" class="lesson-card">
+            <h5 class="khmer-muol">១៧. Border & Radius</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  border: <span class="t-val">2px solid red</span>;<br />
+                  border-radius: <span class="t-val">10px</span>;
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body">
+                  <div
+                    style="
+                      border: 2px solid red;
+                      border-radius: 10px;
+                      padding: 5px;
+                    "
+                  >
+                    
+                    border red
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l18" class="lesson-card">
+            <h5 class="khmer-muol">១៨. Margin & Padding</h5>
+
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  padding: <span class="t-val">20px</span>;
+                  <span class="text-secondary">/* ក្នុង */</span><br />
+                  margin: <span class="t-val">20px</span>;
+                  <span class="text-secondary">/* ក្រៅ */</span>
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body bg-light">
+                  <div
+                    style="
+                      background: white;
+                      border: 1px dashed gray;
+                      padding: 20px;
+                    "
+                  >
+                    Padding 20px
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l19" class="lesson-card">
+            <h5 class="khmer-muol">១៩. CSS Hover Effect</h5>
+            <div class="split-view">
+              <div class="code-window">
+                <div class="code-body">
+                  .box:hover {<br />&nbsp;&nbsp;background: orange;<br
+                    />
+                     &nbsp;&nbsp;border-radius: 50%;<br/>
+                  }
+                </div>
+              </div>
+              <div class="preview-window">
+                <div class="preview-body d-flex justify-content-center">
+                  <div class="box-demo">Click</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="l20" class="lesson-card">
+    <h5 class="khmer-muol">២០. HTML Video/Audio</h5>
+    <div class="split-view">
+        
+        <div class="code-window">
+            <div class="code-body">
+                <span class="t-tag">&lt;video</span> <span class="t-attr">width</span>="320" <span class="t-attr">controls</span><span class="t-tag">&gt;</span><br>
+                &nbsp;&nbsp;<span class="t-tag">&lt;source</span> <span class="t-attr">src</span>="https://www.w3schools.com/html/mov_bbb.mp4" <span class="t-attr">type</span>="video/mp4"<span class="t-tag">&gt;</span><br>
+                <span class="t-tag">&lt;/video&gt;</span><br><br>
+                
+                <span class="t-tag">&lt;audio</span> <span class="t-attr">controls</span><span class="t-tag">&gt;</span><br>
+                &nbsp;&nbsp;<span class="t-tag">&lt;source</span> <span class="t-attr">src</span>="https://www.w3schools.com/html/horse.mp3" <span class="t-attr">type</span>="audio/mpeg"<span class="t-tag">&gt;</span><br>
+                <span class="t-tag">&lt;/audio&gt;</span>
+            </div>
+        </div>
+
+        <div class="preview-window">
+            <div class="preview-body text-center">
+                <i class="fa-solid fa-circle-play fa-3x text-secondary"></i>
+                <p>Video/Audio Player</p>
+                </div>
+        </div>
+    </div>
+</section>
+
+          <div class="text-center py-5">
+            <h3 class="text-success">វគ្គCSS</h3>
+            <a href="css.html" class="btn btn-success btn-lg">CSS </a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <footer class="bg-dark text-white py-5">
+      <div class="container text-center">
+        <div class="d-flex justify-content-center gap-4 mb-4 fs-5">
+          <a
+            href="https://web.facebook.com/ex.prezz.2025?mibextid=wwXIfr&rdid=l8WgAJswgIIDiJeb&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1bXDyq7NpP%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr#"
+            class="text-white"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://t.me/soaverdykh12345" class="text-white"
+            ><i class="fab fa-telegram"></i
+          ></a>
+        </div>
+        <p class="mb-0 text-secondary">
+          © 2025 Created by <strong>SOR SOAVERDY</strong>. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Sync active link on scroll
+      const sections = document.querySelectorAll("section");
+      const navLi = document.querySelectorAll(".sidebar-links a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLi.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href").includes(current)) {
+            a.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
